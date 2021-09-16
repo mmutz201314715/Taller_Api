@@ -10,14 +10,28 @@ const config = {
 };
 
 // Create a MySQL pool
-const pool = mysql.createPool(config);
+var pool = mysql.createConnection(config);
 // Export the pool
-module.exports = pool;
 const bodyParser = require('body-parser');
 
 const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({ limit: '5mb', extended: true }));
 var cors = require('cors');
 app.use(cors());
+
+
+
+conexion.connect(function(err) {
+
+    if (err) {
+        console.error('Error de conexion: ' + err.stack);
+        return;
+    }
+    console.log('Conectado con el identificador ' + conexion.threadId);
+
+});
 
 // Display all alumnos
 app.get('/alumno', (request, response) => {
