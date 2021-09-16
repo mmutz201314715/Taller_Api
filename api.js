@@ -34,7 +34,7 @@ app.get('/alumno', (request, response) => {
 });
 
 //modificar usuario *
-app.put('/modifysuer', async function (req, res) {
+app.put('/modifysuer',(req, res) => {
   
     let usuario = {
         ID:'',
@@ -62,7 +62,7 @@ var uptname = 0;
 
         if(usuario.nombre != ""){
 
-            conexion.query('UPDATE alumno  SET nombre = ? WHERE ID = ?', [usuario.nombre, usuario.ID], function (error, result, fields){
+            pool.query('UPDATE alumno  SET nombre = ? WHERE ID = ?', [usuario.nombre, usuario.ID], function (error, result, fields){
                 if(error!= null){
                     uptname = -1;
                 }else{
