@@ -1,0 +1,6 @@
+crear BD con LAMPc ✔
+ingresar datos ✔
+crear server API 
+uso multicapa
+probar API
+restringir accesos
