@@ -2,10 +2,10 @@
 const express = require("express");
 const mysql = require('mysql');
 const config = {
-    host: '10.150.0.2',
+    host: 'localhost',
     port: 3306,
-    user: 'apiuser',
-    password: 'abc123**',
+    user: 'root',
+    password: '123',
     database: 'escuela'
 };
 // Create a MySQL pool
