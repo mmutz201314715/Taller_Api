@@ -8,11 +8,13 @@ const config = {
     password: '123',
     database: 'escuela'
 };
+
 // Create a MySQL pool
 const pool = mysql.createPool(config);
 // Export the pool
 module.exports = pool;
 const bodyParser = require('body-parser');
+
 const app = express();
 var cors = require('cors');
 app.use(cors());
@@ -29,6 +31,59 @@ app.get('/alumno', (request, response) => {
         });
         response.send(datos);
     });
+});
+
+//modificar usuario *
+app.put('/modifysuer', async function (req, res) {
+  
+    let usuario = {
+        ID:'',
+        nombre: ''
+       };
+
+
+    if(!req.body.ID) {
+        var  respuesta = {
+         error: true,
+         codigo: 502,
+         mensaje: 'Usuario original requerido'
+        };
+        res.send(respuesta);
+
+       } else {
+
+
+var uptname = 0;
+
+            usuario = {
+                ID : req.body.ID,
+                nombre : req.body.nombre
+             };
+
+        if(usuario.nombre != ""){
+
+            conexion.query('UPDATE alumno  SET nombre = ? WHERE ID = ?', [usuario.nombre, usuario.ID], function (error, result, fields){
+                if(error!= null){
+                    uptname = -1;
+                }else{
+                    console.log("nombre upt");
+                    uptname = 1;
+                    var respuesta2 = {
+                        error: false,
+                        codigo: 200,
+                        mensaje: 'Usuario actualizado',
+                        update: usuario.ID
+                   };
+                   await console.log(respuesta2);
+                   await res.send(respuesta2);
+                }
+            } );
+        }
+
+
+        
+       }
+
 });
 
 
