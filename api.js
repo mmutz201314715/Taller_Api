@@ -2,7 +2,7 @@
 const express = require("express");
 const mysql = require('mysql');
 const config = {
-    host: '34.150.146.41',
+    host: '10.150.0.2',
     user: 'root',
     password: '123',
     database: 'escuela',
