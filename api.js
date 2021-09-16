@@ -12,7 +12,6 @@ const pool = mysql.createPool(config);
 // Export the pool
 module.exports = pool;
 const bodyParser = require('body-parser');
-var uuid = require('uuid');
 const app = express();
 var cors = require('cors');
 app.use(cors());
