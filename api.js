@@ -23,7 +23,7 @@ app.use(cors());
 
 
 
-conexion.connect(function(err) {
+pool.connect(function(err) {
 
     if (err) {
         console.error('Error de conexion: ' + err.stack);
