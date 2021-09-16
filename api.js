@@ -29,7 +29,7 @@ pool.connect(function(err) {
         console.error('Error de conexion: ' + err.stack);
         return;
     }
-    console.log('Conectado con el identificador ' + conexion.threadId);
+    console.log('Conectado con el identificador ' + pool.threadId);
 
 });
 
