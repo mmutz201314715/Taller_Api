@@ -4,8 +4,8 @@ const mysql = require('mysql');
 const config = {
     host: '10.150.0.2',
     port: 3306,
-    user: 'root',
-    password: '123',
+    user: 'apiuser',
+    password: 'abc123**',
     database: 'escuela',
 };
 // Create a MySQL pool
