@@ -34,13 +34,14 @@ app.get('/alumno', (request, response) => {
 });
 
 //modificar usuario *
-app.put('/modifysuer',(req, res) => {
+app.put('/modifysuer', async (req, res) => {
   
     let usuario = {
         ID:'',
         nombre: ''
        };
 
+       console.log(req);
 
     if(!req.body.ID) {
         var  respuesta = {
