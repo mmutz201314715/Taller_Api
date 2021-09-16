@@ -6,7 +6,7 @@ const config = {
     port: 3306,
     user: 'apiuser',
     password: 'abc123**',
-    database: 'escuela',
+    database: 'escuela'
 };
 // Create a MySQL pool
 const pool = mysql.createPool(config);
