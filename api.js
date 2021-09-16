@@ -74,8 +74,8 @@ var uptname = 0;
                         mensaje: 'Usuario actualizado',
                         update: usuario.ID
                    };
-                   await console.log(respuesta2);
-                   await res.send(respuesta2);
+                   console.log(respuesta2);
+                   res.send(respuesta2);
                 }
             } );
         }
