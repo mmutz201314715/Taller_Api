@@ -41,7 +41,7 @@ app.put('/modifysuer', (req, res)  => {
         nombre : ''
        };
 
-       console.log(req);
+       console.log(req.body);
 
     if(!req.body.ID) {
         var  respuesta = {
