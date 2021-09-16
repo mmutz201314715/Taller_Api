@@ -11,7 +11,6 @@ const config = {
 const pool = mysql.createPool(config);
 // Export the pool
 module.exports = pool;
-const pool = require('../data/config');
 const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 var uuid = require('uuid');
